@@ -34,7 +34,7 @@ ezSlotKVStore[divid][key]=value;}}
 function ezGetSlotById(id){if(typeof window.ezslots==='undefined'||window.ezslots==0){return;}
 for(var i=0;i<window.ezslots.length;i++){var slot=window[ezslots[i]];if(typeof slot==='undefined'){continue;}
 var slotId=slot.getSlotElementId();if(typeof slotId!=='undefined'&&slotId==id){return slot;}}}
-function ezSetTargetingFromMap(slot,obj){if(typeof slot==='undefined'){return;}
+function ezSetTargetingFromMap(slot,obj){if(typeof slot==='undefined'){return;} 
 for(var key in obj){if(!obj.hasOwnProperty(key)){continue;}
 slot.setTargeting(key,obj[key]);}}
 var ez_queue=new Array();function sort_queue(a,b)
