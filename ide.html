@@ -15,7 +15,7 @@ function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,
 function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
 function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
 if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
-return false;}
+return false;} 
 function markLoaded(filename){if(!filename||0===filename.length){return;}
 if(filename in items){var item=items[filename];if(item.isComplete===true){log(item.name+' '+filename+': error loaded duplicate')}else{item.isComplete=true;item.isInitialized=true;}}else{items[filename]=new obj.fileLoaded(filename,true);}
 log("markLoaded dummyfile: "+items[filename].name);}
