@@ -36,7 +36,7 @@ for(var i=0;i<window.ezslots.length;i++){var slot=window[ezslots[i]];if(typeof s
 var slotId=slot.getSlotElementId();if(typeof slotId!=='undefined'&&slotId==id){return slot;}}}
 function ezSetTargetingFromMap(slot,obj){if(typeof slot==='undefined'){return;} 
 for(var key in obj){if(!obj.hasOwnProperty(key)){continue;}
-slot.setTargeting(key,obj[key]);}}
+slot.setTargeting(key,obj[key]);}} 
 var ez_queue=new Array();function sort_queue(a,b)
 {if(a.priority<b.priority)return-1;else if(a.priority==b.priority)return 0;else return 1;}
 function execute_ez_queue()
