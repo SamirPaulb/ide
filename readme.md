@@ -3,5 +3,5 @@
 </p>
 
 <p align="center">
-  <a href="https://samirpaul1.github.io/ide/ide.html"> <img src="https://raw.githubusercontent.com/SamirPaulb/assets/main/online-compiler-ide-editor-project-readme-image.jpg"/> </a>
+  <a href="https://samirpaul1.github.io/ide/ide.html"> <img src="online-compiler-ide-editor-project-readme-image.jpg"/> </a>
 </p>
