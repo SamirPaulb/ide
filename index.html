@@ -22,212 +22,60 @@
     <meta property="twitter:description" content="Online Python IDE. Build, run, and share Python code online for free with the help of online-integrated Python's development environment (IDE).">
     <meta property="twitter:image" content="https://raw.githubusercontent.com/SamirPaul1/ide/main/summary_large_image.jpeg">
 
-    
-<link rel="canonical" href="https://samirpaul1.github.io/ide" />
-<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/themes/easyui/gray/easyui.css">
-<link rel="stylesheet" type="text/css" href="https://www.tutorialspoint.com/cg/style.css?v=106">
-<script id="adv" data-cfasync="false">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/40046/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script>
-</head>
-<body class="body easyui-layout" id="cc" style="visibility:hidden;">
-<div class="north" id="north" data-options="region:'north'">
-   <a href="codingground.htm"><img src="/cg/images/logo.png" alt="Online Python Compiler (Interpreter)" class="logo" id="logo"/></a>
-   <h1 class="title" id="main-title">Online Python Compiler (Interpreter)</h1>
-   <span id="edit-title"><a href="javascript:void(0);" class="easyui-linkbutton" onclick="setProjectTitle()" data-options="plain:true,iconCls:'fal fa-edit'" style="float:right"></a></span>
-   <div class="easyui-panel main-menu" id="main-menu" data-options="border:false">
-   <a id="login" onclick="openLogin();" href="javascript:void(0);" class="right-align easyui-linkbutton" data-options="iconCls:'fal fa-sign-in fa-lg', plain:true">Login</a>
-   <a id="logout" href="javascript:void(0);" class="right-align display-none easyui-menubutton" data-options="menu:'#mm1', iconCls:'fal fa-sign-out fa-lg'">Logout</a>
-   <a id="setting" href="javascript:void(0);" class="right-align easyui-menubutton" data-options="menu:'#mm3',iconCls:'fal fa-cog fa-lg'">Setting</a>
-   <a id="edit" href="javascript:void(0);" class="right-align easyui-menubutton" data-options="menu:'#mm2',iconCls:'fal fa-pen-to-square fa-lg'">Edit</a>
-   <a id="project" href="javascript:void(0);" class="right-align easyui-menubutton" data-options="menu:'#mm4', plain:true, iconCls:'fal fa-grid-2 fa-lg'">Project</a>
-  </div>
-</div>
-<div id="loading"><div class="loader"></div></div>
-<div id="mm1" style="width:150px;">
-   <div onclick="getProjects()"  data-options="iconCls:'fal fa-grid-2 fa-sm'">My Projects</div>
-   <div class="menu-sep"></div>
-   <div onclick="openChangePassword()" data-options="iconCls:'fal fa-lock-keyhole fa-sm'">Change Password</div>
-   <div onclick="userProfile()" data-options="iconCls:'fal fa-user fa-sm'">My Profile</div>
-   <div class="menu-sep"></div>
-   <div onclick="userLogout()" data-options="iconCls:'fal fa-sign-out fa-sm'">Logout</div>
-</div>
-<div id="mm2" style="width:200px;">
-   <div id="undo" data-options="iconCls:'fal fa-rotate-left fa-sm'">Undo</div>
-   <div id="redo" data-options="iconCls:'fal fa-rotate-right fa-sm'">Redo</div>
-   <div class="menu-sep"></div>
-   <div id="cut" data-options="iconCls:'fal fa-scissors fa-sm'">Cut</div>
-   <div id="copy" data-options="iconCls:'fal fa-clone fa-sm'">Copy</div>
-   <div id="paste" data-options="iconCls:'fal fa-paste fa-sm'">Paste</div>
-   <div id="delete" data-options="iconCls:'fal fa-trash fa-sm'">Delete</div>
-   <div id="select" data-options="iconCls:'fal fa-check fa-sm'">Select All</div>
-   <div class="menu-sep"></div>
-   <div id="find" data-options="iconCls:'fal fa-magnifying-glass fa-sm'">Find</div>
-   <div id="findreplace" data-options="iconCls:'fal fa-magnifying-glass fa-sm'">Find and Replace</div>
-</div>
-<div id="mm3" style="width:200px;">
-   <div id="editor-theme" data-options="iconCls:'fal fa-input-text fa-sm'"><span>Editor Theme</span>
-           <div>
-                <div onclick="setEditorTheme('crimson_editor');">Crimson</div>
-                <div onclick="setEditorTheme('eclipse');">Eclipse</div>
-                <div onclick="setEditorTheme('github');">Github</div>
-                <div onclick="setEditorTheme('solarized_dark');">Solarized</div>
-                <div onclick="setEditorTheme('cobalt');">Cobalt</div>
-                <div onclick="setEditorTheme('kr_theme');">krTheme</div>
-                <div onclick="setEditorTheme('monokai');">Monokai</div>
-                <div onclick="setEditorTheme('terminal');">Terminal</div>
-                <div onclick="setEditorTheme('textmate');">Textmate</div>
-                <div onclick="setEditorTheme('twilight');">Twilight</div>
-                <div onclick="setEditorTheme('vibrant_ink');">Vibrant Ink</div>
-            </div>
-   </div>
-   <div id="font-size" data-options="iconCls:'fal fa-text-size fa-sm'"><span>Font Size</span>
-            <div>
-                <div onclick="setEditorFontSize('8');">8px</div>
-                <div onclick="setEditorFontSize('9');">9px</div>
-                <div onclick="setEditorFontSize('10');">10px</div>
-                <div onclick="setEditorFontSize('11');">11px</div>
-                <div onclick="setEditorFontSize('12');">12px</div>
-                <div onclick="setEditorFontSize('13');">13px</div>
-                <div onclick="setEditorFontSize('14');">14px</div>
-                <div onclick="setEditorFontSize('15');">15px</div>
-                <div onclick="setEditorFontSize('16');">16px</div>
-                <div onclick="setEditorFontSize('17');">17px</div>
-                <div onclick="setEditorFontSize('18');">18px</div>
-                <div onclick="setEditorFontSize('20');">20px</div>
-                <div onclick="setEditorFontSize('22');">22px</div>
-                <div onclick="setEditorFontSize('24');">24px</div>
-            </div>
-   </div>
-   <div id="tab-size" data-options="iconCls:'fal fa-arrow-right-to-line fa-sm'"><span>Tab Size</span>
-            <div>
-                <div onclick="setEditorTabSize('1');">1</div>
-                <div onclick="setEditorTabSize('2');">2</div>
-                <div onclick="setEditorTabSize('3');">3</div>
-                <div onclick="setEditorTabSize('4');">4</div>
-                <div onclick="setEditorTabSize('5');">5</div>
-                <div onclick="setEditorTabSize('6');">6</div>
-                <div onclick="setEditorTabSize('7');">7</div>
-                <div onclick="setEditorTabSize('8');">8</div>
-            </div>
-   </div>
-   <div class="menu-sep"></div>
-   <div onclick="setEditorInvisible(1);"  data-options="iconCls:'fal fa-eye fa-sm'">Show Invisible</div>
-   <div onclick="setEditorInvisible(0);" data-options="iconCls:'fal fa-eye-slash  fa-sm'">Hide Invisible</div>
-   <div class="menu-sep"></div>
-   <div onclick="setEditorGutter(1);" data-options="iconCls:'fal fa-list-ol fa-sm'">Show Line Numbers</div>
-   <div onclick="setEditorGutter(0);" data-options="iconCls:'fal fa-bars fa-sm'">Hide Line Numbers</div>
-   <div class="menu-sep"></div>
-   <div onclick="setEditorType('ace');"  data-options="iconCls:'fal fa-a fa-sm'">Ace Editor (Default)</div>
-   <div onclick="setEditorType('vim');"  data-options="iconCls:'fal fa-v fa-sm'">Vim Editor</div>
-   <div onclick="setEditorType('emacs');"  data-options="iconCls:'fal fa-e fa-sm'">Emacs Editor</div>
-</div>
-<div id="mm4" style="width:200px;">
-     <div onclick="createProject()" data-options="iconCls:'fal fa-arrow-up-right-from-square fa-sm'"><span>Open New Project</span></div>
-     <div onclick="saveProject();" data-options="iconCls:'fal fa-cloud-arrow-down fa-sm'">Save Project</div>
-     <div onclick="saveAsNewProject();" data-options="iconCls:'fal fa-cloud-arrow-down fa-sm'">Save As New Project</div>
-     <div onclick="generateShareLink();" data-options="iconCls:'fal fa-share-nodes fa-sm'">Share Project</div>
-     <div id="searchproject" onclick="openSearchProject();" data-options="iconCls:'fal fa-magnifying-glass fa-sm'">Search Project</div>
-</div><!--HEADER ENDS -->
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="robots" content="index, follow"/>
+    <meta name="p:domain_verify" content="24bac6e1fbf1750de40d59bb788d9dd9"/>
+    <meta name="p:domain_verify" content="24bac6e1fbf1750de40d59bb788d9dd9"/>
+    <meta name="msvalidate.01" content="1A92FC2EC113F8616A21D76DA684A133" />
+    <meta name="yandex-verification" content="fe6a06c57be84984" />
+    <meta name="yandex-verification" content="39e29790ebc96010" />
+    <meta name="facebook-domain-verification" content="3pkgruuk3kzlsn3jdfehgbd4sem1qb" />
+    <meta name="google-site-verification" content="tTMVzrqoAcZ0jIPOokXcTMAEaj5XHbk2aQcAFyjAtf0" />
+    <meta name="google-site-verification" content="uziThFIJ1huzKLCKv-DChPbWZTRRFqmmdA6pcA-dqzs" />
+    <meta name="google-site-verification" content="fVqw6aziPBBMvC50fkQ3A6y38AhIfhUhfDyIzqqdGTs" />
+    <meta name="google-site-verification" content="0xx-nlxp3UCpu_YITeTuMA4ld0Jup5hg69j-QNot0aU" />
+    <meta name="google-site-verification" content="YZkjOzwrUSuP4dJNNznzDnp1oGqYsVN9KuQPaZ9Q61o" />
+    <meta name="norton-safeweb-site-verification" content="2xno70lnqo1ajcykeat10qud6lat0xlkc2bskxz0k9ma74g0bn-kprra5ev6bwui2s6-2394l0ryopjet7yt3hs8tokilug2cfhocw3r0nlj2t1xx690tgu82t59wtwi" />
 
-<div data-options="region:'west',split:true" id="west" style="width:45%;"><!--CODE AREA STARTS -->
-<div class="easyui-tabs" data-options="fit:true,border:false,tools:'#tab-tools',toolPosition:'left'" id="codebox" style="width:40%;">
-<div title="Source Code" id="editor"># Online Python-3 Compiler (Interpreter)
-print (&quot;Hello, World!&quot;)</div>
-<div title="Help" id="help" data-options="icon:'fal fa-circle-question fa-lg'">
-<h1>Online Python Compiler (Interpreter) (Python v3.6.2)</h1>
-<p><b>Online Python Compiler (Interpreter) (Python v3.6.2)</b> helps you to Edit, Run and Share your Python3 Code directly from your browser. This development environment provides you version Python v3.6.2.</p>
-<h2>How to give program Input?</h2>
-<p>The latest version of Coding Ground allows to provide program input at run time from the termnial window exactly the same way as you run your program at your own computer. So simply run a program and provide your program input (if any) from the terminal window available in the right side.</p>
-<h2>Keyboard Shortcuts</h2>
-<table id="machelp" style="width:100%;">
-<tr><th>Shortcut</th><th>Description</th></tr>
-<tr><td style="width:20%">&#8984; + Enter</td><td>Run the program</td></tr>
-<tr><td style="width:20%">&#8984; + S</td><td>Save Project (Login Required)</td></tr>
-<tr><td style="width:20%">&#8679; + &#8984; + S</td><td>Save As Project</td></tr>
-<tr><td style="width:20%">&#8984; + P</td><td>New Project</td></tr>
-<tr><td style="width:20%">&#8984; + G</td><td>Share Project</td></tr>
-<tr><td style="width:20%">&#8984; + Z</td><td>Undo Editing</td></tr>
-<tr><td style="width:20%">&#8984; + Y</td><td>Redo Editing</td></tr>
-<tr><td style="width:20%">&#8984; + A</td><td>Select All Text</td></tr>
-<tr><td style="width:20%">&#8984; + X</td><td>Cut Selected Text</td></tr>
-<tr><td style="width:20%">&#8984; + C</td><td>Copy Selected Text</td></tr>
-<tr><td style="width:20%">&#8984; + V</td><td>Paste Copied Text</td></tr>
-<tr><td style="width:20%">&#8984; + F</td><td>Search Text</td></tr>
-<tr><td style="width:20%">&#8984; + &#8997; + F</td><td>Replace Text</td></tr>
-</table>
-<table id="winhelp" style="width:100%;">
-<tr><th>Shortcut</th><th>Description</th></tr>
-<tr><td style="width:20%">Ctrl + Enter</td><td>Run the program</td></tr>
-<tr><td style="width:20%">Ctrl + S</td><td>Save Project</td></tr>
-<tr><td style="width:20%">Shift + Ctrl + S</td><td>Save As Project</td></tr>
-<tr><td style="width:20%">Ctrl + G</td><td>Share Project</td></tr>
-<tr><td style="width:20%">Ctrl + Z</td><td>Undo Editing</td></tr>
-<tr><td style="width:20%">Ctrl + Y</td><td>Redo Editing</td></tr>
-<tr><td style="width:20%">Ctrl + A</td><td>Select All Text</td></tr>
-<tr><td style="width:20%">Ctrl + X</td><td>Cut Selected Text</td></tr>
-<tr><td style="width:20%">Ctrl + C</td><td>Copy Selected Text</td></tr>
-<tr><td style="width:20%">Ctrl + V</td><td>Paste Copied Text</td></tr>
-<tr><td style="width:20%">Ctrl + F</td><td>Search Text</td></tr>
-<tr><td style="width:20%">Ctrl + H</td><td>Replace Text</td></tr>
-</table>
-<h2>Save Python3 Project</h2>
-<p>You can save your Python3 Project with us so that you can access this project later on. To save a project you will need to create a login Id with us. So before you save a project, please create a login Id using a link given at the top right corner of this page.</p>
+    <style type="text/css">
+		html {
+			overflow: auto;
+		}
+		
+		html,
+		body,
+		div,
+		iframe {
+			margin: 0px;
+			padding: 0px;
+			height: 100%;
+			border: none;
+		}
+		
+		iframe {
+			display: block;
+			width: 100%;
+			border: none;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+    </style>
 
-<h2>Share Python3 Project</h2>
-<p>You can use this feature to share your Python3 Code with your teachers, classmates and colleagues. Just click <b>Share</b> Button and it will create a short link, which can be shared through Email, WhatsApp or even through Social Media.  A shared link will be deleted if it has been passive for almost 3 months.</p>
-</div>
-</div>
-</div>
-<div id="tab-tools" style="border-top:0px; border-right:0px;">
-   <a href="javascript:void(0)" id="execute"  class="easyui-linkbutton" data-options="plain:true,iconCls:'fal fa-gears fa-lg'" style="white-space:nowrap;">&nbsp;<b>Execute</b></a>
-   <span style="white-space:nowrap;" class="execute_space" id="space1">|</span>
-   <a href="javascript:void(0)" id="beautify"  class="easyui-linkbutton" data-options="plain:true,iconCls:'fal fa-display-code fa-lg'" style="white-space:nowrap;">&nbsp;<b>Beautify</b></a>
-   <span style="white-space:nowrap;" class="execute_space" id="space2">|</span>
-   <a href="javascript:void(0)" id="share"  onclick="generateShareLink()" class="easyui-linkbutton" data-options="plain:true,iconCls:'fal fa-share-nodes fa-lg'" style="white-space:nowrap;"><b>Share</b></a>
-</div>
-<!-- CENTER STARTS -->
-<div id="center" data-options="region:'center',iconCls:'fal fa-rectangle-terminal fa-sm', title:'Terminal', split:true, tools:[{iconCls:'icon-clean', handler:function(){clearTerminal()}}]" style="width:45%;border-bottom: 0px;">
-<div class="easyui-accordion" id="accordion" style="width:100%;height:100%;border:0px;">
-<div id="terminal"></div>
-<iframe id="result" style="height:100%; width:100%; border:0px;"></iframe>
-</div>
-</div><!--CENTER ENDS -->
-<!--EAST STARTS -->
-<div id="east" data-options="region:'east', title:'&nbsp;&nbsp;&nbsp;&nbsp;Advertisement', collapsible:false" style="overflow: hidden; width: 1px">
-<div id="d5686fb9-4489-48e0-9f5b-5691c7936f83" class="_ap_apex_ad">
-<script>
-var adpushup = window.adpushup = window.adpushup || {};
-adpushup.que = adpushup.que || [];
-adpushup.que.push(function() {
-adpushup.triggerAd("d5686fb9-4489-48e0-9f5b-5691c7936f83");
-});
-</script>
-</div>
-</div>
-<!--EAST ENDS -->
-<div id="south" data-options="region:'south',collapsible:true, split:true, tools:[{ iconCls:'icon-h-terminal', handler:function(){setTerminalMode('V')}}, {iconCls:'icon-clean', handler:function(){clearTerminal()}}]" style="height:0%;">
-</div><!--SOUTH ENDS -->
-<script>
-var HOME = "https://www.tutorialspoint.com";
-var langid = "python3";
-var filename = "main.py";
-var mainfile = "main.py";
-var modename = "python";
-var version = "Python v3.6.2";
-var opt = "refresh";
-var projectid = "";
-var projecttitle = "Online Python Compiler (Interpreter)";
-var sessionId = "640c8d2b3534d";
-</script>
-<script src="https://kit.fontawesome.com/d10db5a94a.js" crossorigin="anonymous"></script>
-<script src="https://www.tutorialspoint.com/themes/easyui/jquery.min.js"></script>
-<script src="https://www.tutorialspoint.com/themes/easyui/jquery.easyui.min.js"></script>
-<script src="https://samirpaulb.github.io/assets/tutorialspoint-ide-ace.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
-<script src="https://samirpaulb.github.io/assets/tutorialspoint-ide-script-dev.js?v164"></script>
-<script src="https://www.google-analytics.com/urchin.js"></script>
-<script>
-_uacct = "UA-32077377-1";
-urchinTracker();
-</script>
+
+
+
+<body>
+	<noscript title="No JavaScript Support"> <h1>You need to enable JavaScript to run this app.</h1> </noscript>
+	
+	<iframe src="https://www.tutorialspoint.com/online_python_compiler.php"
+			frameborder="0"
+			marginheight="0"
+			marginwidth="0"
+			width="100%"
+			height="100%"
+			scrolling="auto">
+</iframe>
+	
+
 </body>
 </html>
