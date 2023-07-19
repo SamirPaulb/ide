@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/samirpaul1/ide/issues"
   },
-  "homepage": "https://github.com/samirpaul1/ide#readme"
+  "homepage": "https://github.com/samirpaul1/ide#readme",
+
+  "publishConfig": {
+    "@SamirPaul1:registry": "https://npm.pkg.github.com"
+  }
+ 
 }
+
